@@ -65,6 +65,10 @@ function initGame() {
   gameOverAudio.currentTime = 0;
   winAudio.pause();
   winAudio.currentTime = 0;
+
+// restart backgroundColor
+ document.querySelector("body").style.backgroundColor =
+          "var(--color_bg)";
 }
 initGame();
 
@@ -117,6 +121,8 @@ document.addEventListener("click", (e) => {
     } else {
       document.getElementById("suc").play();
       if (choosenWord.join("") === words.textContent) {
+        document.querySelector("body").style.backgroundColor =
+          "var(--color_secbg)";
         document.getElementById("win").play();
         win();
       }
@@ -129,3 +135,4 @@ document.addEventListener("click", (e) => {
 document.querySelectorAll(".reset").forEach((btn) => {
   btn.addEventListener("click", initGame);
 });
+
