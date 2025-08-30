@@ -24,8 +24,10 @@ const randomPropArr = allKeys[randomArr];
 const randomPropEl = randomWords[randomPropArr][randomEl];
 console.log(randomPropEl);
 // ================================================================================
+let gameactive = true;
 // gameover function
 function gameover() {
+  gameactive = false;
   document.getElementById("hidden_lose").style.display = "flex";
   document.querySelector(
     ".thecorword"
@@ -33,6 +35,7 @@ function gameover() {
 }
 // win function
 function win() {
+  gameactive = false;
   document.getElementById("hidden_win").style.display = "flex";
 }
 // reset function
@@ -61,7 +64,7 @@ document.addEventListener("click", (e) => {
   let state = false;
   //   ========================
 
-  if (e.target.className == "letr") {
+  if (e.target.className == "letr" && gameactive) {
     e.target.classList.add("clicked");
 
     // getletter
