@@ -6,6 +6,8 @@ const theDraw = document.querySelector(".hangman_draw");
 const theWin = document.querySelector(".win");
 const theGameover = document.querySelector(".gameover");
 const resetBtn = document.querySelectorAll(".reset");
+const winAudio = document.getElementById("win");
+const gameOverAudio = document.getElementById("gameover");
 // ================================================================================
 
 // random words
@@ -17,14 +19,55 @@ const randomWords = {
   countries: ["EGYPT", "USA", "ENGLAND", "GERMANY", "SPAIN"],
   Countries: ["ITALY", "RUSSIA", "FRANCE", "PORTUGAL", "BRAZIL"],
 };
-let allKeys = Object.keys(randomWords);
-const randomArr = Math.trunc(Math.random() * 6);
-const randomEl = Math.trunc(Math.random() * 5);
-const randomPropArr = allKeys[randomArr];
-const randomPropEl = randomWords[randomPropArr][randomEl];
-console.log(randomPropEl);
+
 // ================================================================================
+// init var
 let gameactive = true;
+let choosenWord;
+let trys = 0;
+// ================================================================================
+
+// init function
+function initGame() {
+  // redeclare var
+  trys = 0;
+  gameactive = true;
+
+  // removing wrong trys
+  theDraw.className = "hangman_draw";
+  // random numbers
+  let allKeys = Object.keys(randomWords);
+  const randomArr = Math.trunc(Math.random() * 6);
+  const randomEl = Math.trunc(Math.random() * 5);
+  const randomPropArr = allKeys[randomArr];
+  const randomPropEl = randomWords[randomPropArr][randomEl];
+
+  catg.textContent = randomPropArr;
+
+  choosenWord = Array.from(randomPropEl);
+  // removing all old spans
+  words.innerHTML = "";
+  // creating new span
+  choosenWord.forEach((letter) => {
+    let emptySpan = document.createElement("span");
+    emptySpan.textContent = "-";
+    words.appendChild(emptySpan);
+  });
+  // removing clicked letters
+  document.querySelectorAll(".letr").forEach((btn) => {
+    btn.classList.remove("clicked");
+  });
+  // removing win and lose temp
+  document.getElementById("hidden_lose").style.display = "none";
+  document.getElementById("hidden_win").style.display = "none";
+  // stoping audio
+  gameOverAudio.pause();
+  gameOverAudio.currentTime = 0;
+  winAudio.pause();
+  winAudio.currentTime = 0;
+}
+initGame();
+
 // gameover function
 function gameover() {
   gameactive = false;
@@ -38,25 +81,9 @@ function win() {
   gameactive = false;
   document.getElementById("hidden_win").style.display = "flex";
 }
-// reset function
-function reset() {
-  window.location.reload();
-}
-// ================================================================================
-// intit
-catg.textContent = randomPropArr;
-
-// letters guess
-let choosenWord = Array.from(randomPropEl);
-choosenWord.forEach((letter) => {
-  let emptySpan = document.createElement("span");
-  emptySpan.textContent = "-";
-  words.appendChild(emptySpan);
-});
 
 // =================================================================================
 const wordsSpan = document.querySelectorAll(".words span");
-let trys = 0;
 // =================================================================================
 // letters keybord
 document.addEventListener("click", (e) => {
@@ -100,5 +127,5 @@ document.addEventListener("click", (e) => {
 
 // reset
 document.querySelectorAll(".reset").forEach((btn) => {
-  btn.addEventListener("click", reset);
+  btn.addEventListener("click", initGame);
 });
