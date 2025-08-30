@@ -12,12 +12,159 @@ const gameOverAudio = document.getElementById("gameover");
 
 // random words
 const randomWords = {
-  programming: ["R", "JAVA", "JAVASCRIPT", "PYTHON", "PHP"],
-  majors: ["MECHATRONICS", "COMPUTER", "ELCTRICAL", "MECHANICAL", "SCIENTIST"],
-  players: ["MESSI", "RONALDO", "HAZARD", "SALAH", "PELE"],
-  Players: ["PEDRI", "INISTA", "SHIKABALA", "MARMOUSH", "YAMAL"],
-  countries: ["EGYPT", "USA", "ENGLAND", "GERMANY", "SPAIN"],
-  Countries: ["ITALY", "RUSSIA", "FRANCE", "PORTUGAL", "BRAZIL"],
+  Cars: [
+    "TOYOTA",
+    "BMW",
+    "MERCEDES",
+    "AUDI",
+    "VOLKSWAGEN",
+    "FORD",
+    "CHEVROLET",
+    "KIA",
+    "NISSAN",
+    "TESLA",
+    "JEEP",
+    "PORSCHE",
+    "FERRARI",
+    "LAMBORGHINI",
+    "BUGATTI",
+  ],
+  Company: [
+    "APPLE",
+    "SAMSUNG",
+    "GOOGLE",
+    "AMAZON",
+    "MICROSOFT",
+    "FACEBOOK",
+    "NIKE",
+    "PEPSI",
+    "ADIDAS",
+    "SONY",
+    "INTEL",
+    "XIAOMI",
+    "NVIDIA",
+    "HUAWEI",
+    "DELL",
+  ],
+  Teams: [
+    "BARCELONA",
+    "REALMADRID",
+    "LIVERPOOL",
+    "CHELSEA",
+    "ARSENAL",
+    "TOTTENHAM",
+    "MILAN",
+    "ZAMALEK",
+    "JUVENTUS",
+    "NAPOLI",
+    "BAYERN",
+    "DORTMUND",
+    "PSG",
+    "ALAHLY",
+    "MANCITY",
+  ],
+  majors: [
+    "MECHATRONICS",
+    "COMPUTER",
+    "ELCTRICAL",
+    "MECHANICAL",
+    "SCIENTIST",
+    "CIVIL",
+    "MATHEMATICS",
+    "LAW",
+    "ART",
+    "BUSINESS",
+    "MEDICINE",
+    "HISTORY",
+    "EDUCATION",
+    "GEOGRAPHY",
+    "DENTIST",
+  ],
+  players: [
+    "MESSI",
+    "RONALDO",
+    "HAZARD",
+    "SALAH",
+    "PELE",
+    "GERRARD",
+    "LAMPARD",
+    "IBRAHIMOVIC",
+    "PIQUE",
+    "RAMOS",
+    "POGBA",
+    "SON",
+    "KANE",
+    "HAALAND",
+    "VINICIUS",
+  ],
+  Players: [
+    "PEDRI",
+    "INISTA",
+    "SHIKABALA",
+    "MARMOUSH",
+    "YAMAL",
+    "BENZEMA",
+    "LEWANDOWSKI",
+    "MODRIC",
+    "MBAPPE",
+    "NEYMAR",
+    "RONALDINHO",
+    "XAVI",
+    "BECKHAM",
+    "DROGBA",
+    "HENRY",
+  ],
+  countries: [
+    "EGYPT",
+    "USA",
+    "ENGLAND",
+    "GERMANY",
+    "SPAIN",
+    "ARGENTINA",
+    "NETHERLANDS",
+    "SWEDEN",
+    "NORWAY",
+    "DENMARK",
+    "SWITZERLAND",
+    "AUSTRALIA",
+    "CANADA",
+    "JAPAN",
+    "CHINA",
+  ],
+  Countries: [
+    "ITALY",
+    "RUSSIA",
+    "FRANCE",
+    "PORTUGAL",
+    "BRAZIL",
+    "INDIA",
+    "PERU",
+    "TURKEY",
+    "KOREA",
+    "GREECE",
+    "MEXICO",
+    "POLAND",
+    "UKRAINE",
+    "THAILAND",
+    "URUGUAY",
+  ],
+  Capitals: [
+    "CAIRO",
+    "LONDON",
+    "PARIS",
+    "ROME",
+    "BERLIN",
+    "MOSCOW",
+    "MADRID",
+    "TOKYO",
+    "DELHI",
+    "RIYADH",
+    "ANKARA",
+    "WASHINGTON",
+    "DOHA",
+    "MEXICO",
+    "BEIRUT",
+  ],
 };
 
 // ================================================================================
@@ -38,8 +185,8 @@ function initGame() {
   theDraw.className = "hangman_draw";
   // random numbers
   let allKeys = Object.keys(randomWords);
-  const randomArr = Math.trunc(Math.random() * 6);
-  const randomEl = Math.trunc(Math.random() * 5);
+  const randomArr = Math.trunc(Math.random() * 10);
+  const randomEl = Math.trunc(Math.random() * 16);
   const randomPropArr = allKeys[randomArr];
   const randomPropEl = randomWords[randomPropArr][randomEl];
 
@@ -67,10 +214,9 @@ function initGame() {
   winAudio.pause();
   winAudio.currentTime = 0;
 
-// restart backgroundColor
- document.querySelector("body").style.backgroundColor =
-          "var(--color_bg)";
-// selecting new spans
+  // restart backgroundColor
+  document.querySelector("body").style.backgroundColor = "var(--color_bg)";
+  // selecting new spans
   wordsSpan = document.querySelectorAll(".words span");
 }
 initGame();
@@ -135,7 +281,3 @@ document.addEventListener("click", (e) => {
 document.querySelectorAll(".reset").forEach((btn) => {
   btn.addEventListener("click", initGame);
 });
-
-
-
-
