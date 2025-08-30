@@ -25,6 +25,7 @@ const randomWords = {
 let gameactive = true;
 let choosenWord;
 let trys = 0;
+let wordsSpan;
 // ================================================================================
 
 // init function
@@ -69,6 +70,8 @@ function initGame() {
 // restart backgroundColor
  document.querySelector("body").style.backgroundColor =
           "var(--color_bg)";
+// selecting new spans
+  wordsSpan = document.querySelectorAll(".words span");
 }
 initGame();
 
@@ -135,5 +138,6 @@ document.addEventListener("click", (e) => {
 document.querySelectorAll(".reset").forEach((btn) => {
   btn.addEventListener("click", initGame);
 });
+
 
 
