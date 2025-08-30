@@ -13,7 +13,7 @@ const gameOverAudio = document.getElementById("gameover");
 // random words
 const randomWords = {
   programming: ["R", "JAVA", "JAVASCRIPT", "PYTHON", "PHP"],
-  majors: ["MECHATRONICS", "COMPUTER", "ELCTRICAL", "MECHANICAL", "scientist"],
+  majors: ["MECHATRONICS", "COMPUTER", "ELCTRICAL", "MECHANICAL", "SCIENTIST"],
   players: ["MESSI", "RONALDO", "HAZARD", "SALAH", "PELE"],
   Players: ["PEDRI", "INISTA", "SHIKABALA", "MARMOUSH", "YAMAL"],
   countries: ["EGYPT", "USA", "ENGLAND", "GERMANY", "SPAIN"],
@@ -135,4 +135,5 @@ document.addEventListener("click", (e) => {
 document.querySelectorAll(".reset").forEach((btn) => {
   btn.addEventListener("click", initGame);
 });
+
 
