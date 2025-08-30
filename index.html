@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hangman Game</title>
+    <!-- start normalize css -->
+    <link rel="stylesheet" href="normalize.css" />
+    <!-- end normalize css -->
+    <!-- start style css -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- end style css -->
+  </head>
+  <body>
+    <div class="top">
+      <h2>Hangman Game</h2>
+      <p class="catg">Players</p>
+      <button class="reset">reset</button>
+    </div>
+    <div class="game">
+      <div class="hangman_draw">
+        <div class="draw">
+          <div class="stand"></div>
+          <div class="hang"></div>
+          <div class="rope"></div>
+          <div class="head"></div>
+          <div class="body"></div>
+          <div class="hands"></div>
+          <div class="legs"></div>
+        </div>
+      </div>
+      <div class="letters">
+        <span class="letr">A</span>
+        <span class="letr">B</span>
+        <span class="letr">C</span>
+        <span class="letr">D</span>
+        <span class="letr">E</span>
+        <span class="letr">F</span>
+        <span class="letr">G</span>
+        <span class="letr">H</span>
+        <span class="letr">I</span>
+        <span class="letr">J</span>
+        <span class="letr">K</span>
+        <span class="letr">L</span>
+        <span class="letr">M</span>
+        <span class="letr">N</span>
+        <span class="letr">O</span>
+        <span class="letr">P</span>
+        <span class="letr">Q</span>
+        <span class="letr">R</span>
+        <span class="letr">S</span>
+        <span class="letr">T</span>
+        <span class="letr">U</span>
+        <span class="letr">V</span>
+        <span class="letr">W</span>
+        <span class="letr">X</span>
+        <span class="letr">Y</span>
+        <span class="letr">Z</span>
+      </div>
+    </div>
+    <div class="word">
+      <div class="words"></div>
+    </div>
+    <div class="win" id="hidden_win">
+      <p>You won🥇🥇</p>
+    </div>
+    <div class="gameover" id="hidden_lose">
+      <p>Game Over💀</p>
+      <p class="thecorword"></p>
+    </div>
+    <!-- sounds -->
+    <audio src="win.mp3" preload="auto" id="win"></audio>
+    <audio src="fail.mp3" preload="auto" id="fail"></audio>
+    <audio src="gameover.mp3" id="gameover"></audio>
+    <audio src="suc.mp3" id="suc"></audio>
+    <script src="script.js"></script>
+  </body>
+</html>
