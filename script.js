@@ -185,10 +185,12 @@ function initGame() {
   theDraw.className = "hangman_draw";
   // random numbers
   let allKeys = Object.keys(randomWords);
-  const randomArr = Math.trunc(Math.random() * 10);
-  const randomEl = Math.trunc(Math.random() * 16);
+  const randomArr = Math.trunc(Math.random() * allKeys.length);
   const randomPropArr = allKeys[randomArr];
-  const randomPropEl = randomWords[randomPropArr][randomEl];
+  const wordsArray = randomWords[randomPropArr];
+  const randomEl = Math.trunc(Math.random() * wordsArray.length);
+  
+  const randomPropEl =wordsArray[randomEl];
 
   catg.textContent = randomPropArr;
 
@@ -281,3 +283,4 @@ document.addEventListener("click", (e) => {
 document.querySelectorAll(".reset").forEach((btn) => {
   btn.addEventListener("click", initGame);
 });
+
