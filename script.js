@@ -88,9 +88,6 @@ function win() {
   gameactive = false;
   document.getElementById("hidden_win").style.display = "flex";
 }
-
-// =================================================================================
-const wordsSpan = document.querySelectorAll(".words span");
 // =================================================================================
 // letters keybord
 document.addEventListener("click", (e) => {
@@ -138,6 +135,7 @@ document.addEventListener("click", (e) => {
 document.querySelectorAll(".reset").forEach((btn) => {
   btn.addEventListener("click", initGame);
 });
+
 
 
 
