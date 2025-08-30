@@ -451,14 +451,15 @@ h2 {
   .win {
     width: 75%;
     height: 25%;
-    font-size: 3rem;
+    font-size: 2rem;
   }
   .gameover {
     width: 75%;
     height: 25%;
-    font-size: 3rem;
+    font-size: 2rem;
   }
 }
+
 
 
 
