@@ -127,7 +127,7 @@ h2 {
   pointer-events: none;
 }
 /* xsm */
-@media (max-width: 386px) {
+@media (max-width: 380px) {
   .game {
     grid-template-columns: 1fr;
     grid-template-rows: 1.25fr 1fr;
@@ -142,7 +142,7 @@ h2 {
 }
 
 /* sm */
-@media (min-width: 387px) (max-width: 576px) {
+@media (min-width: 381px) (max-width: 576px) {
   .game {
     grid-template-columns: 1fr;
     grid-template-rows: 1.25fr 1fr;
@@ -459,6 +459,7 @@ h2 {
     font-size: 3rem;
   }
 }
+
 
 
 
