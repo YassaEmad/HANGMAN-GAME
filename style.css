@@ -58,6 +58,7 @@ h2 {
   font-size: 3.5rem;
   color: var(--color_secbg);
   font-weight: bold;
+  
 }
 .top .reset {
   font-size: 2rem;
@@ -65,6 +66,11 @@ h2 {
   text-align: center;
   border-radius: 9px;
   background-color: var(--color_btnh);
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+.top .reset:hover {
+  transform: translate(-3px, 3px);
 }
 /* sm */
 @media (max-width: 576px) {
@@ -460,6 +466,7 @@ h2 {
     font-size: 2rem;
   }
 }
+
 
 
 
