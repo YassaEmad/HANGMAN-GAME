@@ -275,12 +275,10 @@ document.addEventListener("click", (e) => {
         win();
       }
     }
-    console.log(state);
   }
 });
 
 // reset
-document.querySelectorAll(".reset").forEach((btn) => {
-  btn.addEventListener("click", initGame);
-});
+document.querySelector(".reset").addEventListener("click", initGame);
+
 
